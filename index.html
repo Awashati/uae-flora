@@ -1,23 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UAE Flora Explorer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>UAE Flora Explorer</h1>
+    <h1>🌿 UAE Flora Explorer</h1>
+    <div class="buttons">
+      <button onclick="getLocation()">📍 Nearby Plants (GPS)</button>
+    </div>
   </header>
+
   <main class="container">
-    <input type="text" id="search" class="search-bar" placeholder="Search for a plant...">
-    <button onclick="getLocation()">📍 Nearby Plants (GPS)</button>
+    <input type="text" id="search" class="search-bar" placeholder="Search plant name...">
+    
     <video id="camera" autoplay playsinline></video>
+    <div id="locationDisplay"></div>
     <section class="plant-list" id="plantList"></section>
   </main>
+
   <footer>
+    <p>Explore native plants of the UAE — live with camera & GPS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
     <p>🌿 Explore native plants of the UAE — with live camera & GPS</p>
   </footer>
   <script src="script.js"></script>
