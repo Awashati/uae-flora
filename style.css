@@ -1,16 +1,23 @@
-
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom right, #ecfdf5, #d1fae5, #ccfbf1);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e6f7ec, #e0fdfd);
   margin: 0;
   padding: 0;
 }
 
-header, footer {
-  background: #064e3b;
+header {
+  background: #05644e;
   color: white;
   padding: 1rem;
   text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header .buttons {
+  margin-top: 0.5rem;
 }
 
 .container {
@@ -19,30 +26,35 @@ header, footer {
   padding: 1rem;
 }
 
-video {
-  width: 100%;
-  border: 2px solid #a7f3d0;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
 .search-bar {
-  padding: 0.5rem;
   width: 100%;
-  border: 1px solid #6ee7b7;
+  padding: 0.5rem;
   border-radius: 5px;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #a0d6c5;
 }
 
 button {
-  padding: 0.5rem 1rem;
-  background-color: #059669;
-  border: none;
+  background-color: #079f6d;
   color: white;
-  border-radius: 5px;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
   margin-top: 1rem;
+}
+
+video {
   width: 100%;
+  border: 2px solid #83e8c2;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+#locationDisplay {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #0a6848;
 }
 
 .plant-list {
@@ -50,20 +62,18 @@ button {
 }
 
 .plant-item {
-  background: white;
+  background: #ffffff;
+  border-radius: 8px;
   padding: 1rem;
-  margin-top: 0.5rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.plant-item strong {
-  display: block;
-  font-size: 1.1rem;
+footer {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #555;
 }
 
-.plant-item em {
-  display: block;
-  font-style: italic;
-  color: #065f46;
-}
