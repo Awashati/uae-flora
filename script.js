@@ -1,21 +1,14 @@
+const plants = []; // currently no entries, ready for future diagnosis
 
-const plants = [
-  {
-    commonName: "Desert Hyacinth",
-    scientificName: "Cistanche tubulosa",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Cistanche_tubulosa_in_Israel_01.jpg/320px-Cistanche_tubulosa_in_Israel_01.jpg"
-  },
-  {
-    commonName: "Mangrove",
-    scientificName: "Avicennia marina",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Avicennia_marina_flowers.jpg/320px-Avicennia_marina_flowers.jpg"
-  }
-];
-
+// 📍 Get user's GPS location
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
-      alert(`Latitude: ${position.coords.latitude}\nLongitude: ${position.coords.longitude}`);
+      const coords = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+      alert(coords);
+      const locBox = document.createElement("p");
+      locBox.textContent = coords;
+      document.getElementById("locationDisplay")?.appendChild(locBox);
     }, () => {
       alert("GPS access denied");
     });
@@ -24,14 +17,25 @@ function getLocation() {
   }
 }
 
+// 📸 Activate camera stream
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(stream => {
-    document.getElementById("camera").srcObject = stream;
+    const videoEl = document.getElementById("camera");
+    if (videoEl) {
+      videoEl.srcObject = stream;
+      videoEl.onloadeddata = () => {
+        const message = document.createElement("p");
+        message.innerText = "🔍 Live camera is active. Point it at a plant to begin recognition.";
+        videoEl.parentElement.appendChild(message);
+      };
+    }
   })
-  .catch(() => {
+  .catch(err => {
     alert("Camera access denied or not supported");
+    console.error(err);
   });
 
+// 🔍 Search and display plant matches
 const searchInput = document.getElementById("search");
 const plantList = document.getElementById("plantList");
 
@@ -42,7 +46,7 @@ function renderPlants(filter = "") {
     p.scientificName.toLowerCase().includes(filter.toLowerCase())
   );
   if (results.length === 0) {
-    plantList.innerHTML = `<p class='plant-item'>No plants found.</p>`;
+    plantList.innerHTML = `<p class='plant-item'>No matching plants found.</p>`;
     return;
   }
   results.forEach(plant => {
@@ -56,8 +60,9 @@ function renderPlants(filter = "") {
   });
 }
 
-searchInput.addEventListener("input", () => {
+searchInput?.addEventListener("input", () => {
   renderPlants(searchInput.value);
 });
 
-renderPlants();
+renderPlants(); // initialize display
+
