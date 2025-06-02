@@ -4,22 +4,22 @@ function classifyPlant() {
   const preview = document.getElementById('imagePreview');
 
   if (!input.files.length) {
-    output.textContent = '❌ Please upload a plant image first.';
+    output.textContent = '❌ Please upload a plant image.';
     return;
   }
 
   const file = input.files[0];
   const reader = new FileReader();
 
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     preview.src = e.target.result;
     preview.style.display = 'block';
-    output.innerHTML = '🔍 Classifying...';
+    output.textContent = '🔍 Analyzing...';
 
-    // Simulated prediction logic
+    // Simulated AI classification (fake output)
     setTimeout(() => {
-      output.innerHTML = "✅ This might be <strong>Haloxylon salicornicum</strong>, a common desert shrub in the UAE.";
-    }, 2000);
+      output.innerHTML = "✅ Predicted: <strong>Prosopis cineraria</strong> (Ghaf Tree)";
+    }, 1500);
   };
 
   reader.readAsDataURL(file);
