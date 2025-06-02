@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UAE Plant Classifier</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UAE Flora Identifier</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🌿 UAE Plant Classifier</h1>
-    <p>Upload an image of a plant to identify it.</p>
+  <div class="box">
+    <h1>🌿 UAE Flora Identifier</h1>
+    <p>Select a plant image to identify:</p>
 
-    <input type="file" id="imageUpload" accept="image/*">
-    <img id="imagePreview" style="display:none" />
+    <input type="file" id="imageUpload" accept="image/*" />
+    <img id="imagePreview" alt="Plant preview" />
 
-    <button onclick="classifyPlant()">Identify Plant</button>
-
+    <button onclick="classifyPlant()">Identify</button>
     <div id="output"></div>
   </div>
 
