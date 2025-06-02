@@ -1,31 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UAE Flora Explorer</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.12.2/ml5.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAE Plant Classifier</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🌿 UAE Flora Explorer</h1>
-    <div class="buttons">
-      <button onclick="getLocation()">📍 Nearby Plants (GPS)</button>
-    </div>
-  </header>
+  <div class="container">
+    <h1>🌿 UAE Plant Classifier</h1>
+    <p>Upload an image of a plant to identify it.</p>
 
-  <main class="container">
-    <input type="text" id="search" class="search-bar" placeholder="Search plant name...">
-    <video id="camera" autoplay playsinline></video>
-    <div id="locationDisplay"></div>
-    <section class="plant-list" id="plantList"></section>
-  </main>
+    <input type="file" id="imageUpload" accept="image/*">
+    <img id="imagePreview" style="display:none" />
 
-  <footer>
-    <p>Explore native plants of the UAE — live with camera & GPS.</p>
-  </footer>
+    <button onclick="classifyPlant()">Identify Plant</button>
+
+    <div id="output"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
