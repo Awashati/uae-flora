@@ -1,68 +1,42 @@
-
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #e6f7ec, #e0fdfd);
-  margin: 0;
-  padding: 0;
-}
-header {
-  background: #05644e;
-  color: white;
-  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #f0fdf4;
+  color: #065f46;
   text-align: center;
+  padding: 2rem;
 }
-header h1 {
-  margin: 0;
-}
-header .buttons {
-  margin-top: 0.5rem;
-}
+
 .container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
   max-width: 600px;
   margin: auto;
-  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.search-bar {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  border: 1px solid #a0d6c5;
+
+input[type="file"] {
+  margin: 1rem 0;
 }
+
 button {
-  background-color: #079f6d;
-  color: white;
+  background-color: #10b981;
   border: none;
+  color: white;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
   margin-top: 1rem;
 }
-video {
-  width: 100%;
-  border: 2px solid #83e8c2;
+
+button:hover {
+  background-color: #059669;
+}
+
+#imagePreview {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
   border-radius: 10px;
-  margin-top: 1rem;
-}
-#locationDisplay {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #0a6848;
-}
-.plant-list {
-  margin-top: 1rem;
-}
-.plant-item {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-footer {
-  text-align: center;
-  background-color: #f4f4f4;
-  padding: 1rem;
-  font-size: 0.85rem;
-  color: #555;
 }
